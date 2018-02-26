@@ -21,14 +21,13 @@ const {restockCans} = require('./../lib/functions');
 // Change function
 const {getChange} = require('./../lib/functions');
 
-
 // Variable declarations
-const {pepsiCans} = require('./../lib/values');
-const {cokeCans} = require('./../lib/values');
-const {crabJuiceCans} = require('./../lib/values');
-const {nickel} = require('./../lib/values');
-const {dime} = require('./../lib/values');
-const {quarter} = require('./../lib/values');
+const {pepsiCans} = require('./../__mocks__/mock-api');
+const {cokeCans} = require('./../l__mocks__/mock-api');
+const {crabJuiceCans} = require('./../__mocks__/mock-api');
+const {nickel} = require('./../__mocks__/mock-api');
+const {dime} = require('./../__mocks__/mock-api');
+const {quarter} = require('./../__mocks__/mock-api');
  
 class VendingMachine {
   constructor(pepsiCans, cokeCans, crabJuiceCans, nickel, dime, quarter) {
