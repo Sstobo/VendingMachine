@@ -21,6 +21,7 @@ const {restockCans} = require('./../lib/functions');
 // Change function
 const {getChange} = require('./../lib/functions');
 
+
 // Variable declarations
 const {pepsiCans} = require('./../lib/values');
 const {cokeCans} = require('./../lib/values');
@@ -28,35 +29,48 @@ const {crabJuiceCans} = require('./../lib/values');
 const {nickel} = require('./../lib/values');
 const {dime} = require('./../lib/values');
 const {quarter} = require('./../lib/values');
+ 
+class VendingMachine {
+  constructor(pepsiCans, cokeCans, crabJuiceCans, nickel, dime, quarter) {
+    this.pepsiCans = pepsiCans;
+    this.cokeCans = cokeCans;
+    this.crabJuiceCans = crabJuiceCans;
+    this.nickel = nickel;
+    this.dime = dime;
+    this.quarter = quarter;
+  }
+}
+
+let newMachine = new VendingMachine(pepsiCans, cokeCans, crabJuiceCans, nickel, dime, quarter)
 
 
 describe('Vending Machines tests', () => {
     test('Return the stock level of Pepsi can test 1' , () => {
-      const result = displayCanInventory(pepsiCans);
+      const result = displayCanInventory(newMachine.pepsiCans);
       expect(result).toEqual(10);
     });
     test('Return the name of a specified type of can' , () => {
-      const result = displayCanName(cokeCans);
+      const result = displayCanName(newMachine.cokeCans);
       expect(result).toEqual("Coke");
     });
     test('Return the cost of a specified type of can' , () => {
-      const result = displayCanCost(crabJuiceCans);
+      const result = displayCanCost(newMachine.crabJuiceCans);
       expect(result).toEqual(150);
     });
     test('Display the adjusted cost of $1.00 when a nickel is spent' , () => {
-      const result = makePaymentNickel(nickel, 100);
+      const result = makePaymentNickel(newMachine.nickel, 100);
       expect(result).toEqual(95);
     });
     test('Choose can type to buy, set price' , () => {
-      const result = selectCan(cokeCans);
+      const result = selectCan(newMachine.cokeCans);
       expect(result).toEqual(200);
     });
     test('Restock all coins' , () => {
-      const result = restockCoins(nickel, dime, quarter);
+      const result = restockCoins(newMachine.nickel, newMachine.dime, newMachine.quarter);
       expect(result).toEqual(20, 20, 20);
     });
     test('Restock one type of cans' , () => {
-      const result = restockCans(cokeCans);
+      const result = restockCans(newMachine.cokeCans);
       expect(result).toEqual(10);
     });
     test('Getting change for.50 cents in quarters' , () => {
