@@ -23,7 +23,7 @@ const {getChange} = require('./../lib/functions');
 
 // Variable declarations
 const {pepsiCans} = require('./../__mocks__/mock-api');
-const {cokeCans} = require('./../l__mocks__/mock-api');
+const {cokeCans} = require('./../__mocks__/mock-api');
 const {crabJuiceCans} = require('./../__mocks__/mock-api');
 const {nickel} = require('./../__mocks__/mock-api');
 const {dime} = require('./../__mocks__/mock-api');
@@ -82,6 +82,6 @@ describe('Vending Machines tests', () => {
     });
     test('Getting the ammount of quarters, nickels, and dimes change for.70 cents' , () => {
       const result = getChange(-80);
-      expect(result).toEqual("3 quarters back. 0 dimes back. 1 nickle back.");
+      expect(result).toEqual("3 quarters back. 0 dimes back. 1 nickle back. ");
     });
   });
