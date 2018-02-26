@@ -34,6 +34,10 @@ Navigate to /lib/
 In your teminal run:
 * node vending.js
 
+### Stretch goals
+
+The machine will always dispense the smallest amount of coins as change. Tested and functioning.
+
 ### Future goals
 
 I would like to incorporate a simple visual interface using React.
